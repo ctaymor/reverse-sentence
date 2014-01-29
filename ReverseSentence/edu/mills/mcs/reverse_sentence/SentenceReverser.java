@@ -7,6 +7,7 @@ import java.util.Scanner;
  * JUnit and EGit.
  * 
  * @author ellen.spertus@gmail.com (Ellen Spertus)
+ * @author ctaymor@gmail.com (Caroline Taymor)
  */
 public class SentenceReverser {
 	/**
@@ -35,6 +36,9 @@ public class SentenceReverser {
 	// TODO: Add JavaDoc.
 	public String reverseSentence(String s) {
 		// TODO: Write body.
+		// TODO: First, parse words and assign them to a datastructure
+		// TODO: Then reverse the order of the datastructure
+		// TODO: Then form string with words from reordered datastructure
 		return null;
 	}
 }
