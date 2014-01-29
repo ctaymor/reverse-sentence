@@ -14,30 +14,30 @@ public class SentenceReverserTest extends SentenceReverser {
 	@Test
 	public void testReverseSentenceWithEmptyString() {
 		String inputString ="";
-		assertEquals("", SentenceReverser.reverseSentence(inputString));
+		assertEquals("", reverseSentence(inputString));
 	}
 	
 	@Test
 	public void testReverseSentenceWithNoWordsJustPunctuation() {
 		String inputString =".,()";
-		assertEquals("", SentenceReverser.reverseSentence(inputString));
+		assertEquals("", reverseSentence(inputString));
 	}
 	
 	@Test
 	public void testReverseSentenceWithSingleWordAndNoPunctuation() {
 		String inputString ="fish";
-		assertEquals("fish", SentenceReverser.reverseSentence(inputString));
+		assertEquals("fish", reverseSentence(inputString));
 	}
 
 	@Test
 	public void testReverseSentenceWithMultipleWordsAndNoPunctuation() {
 		String inputString ="One fish two fish";
-		assertEquals("fish two fish One", SentenceReverser.reverseSentence(inputString));
+		assertEquals("fish two fish One", reverseSentence(inputString));
 	}
 	
 	@Test
 	public void testReverseSentenceWithMultipleWordsAndPunctuation() {
 		String inputString ="One fish, two fish, red fish, blue fish.";
-		assertEquals("fish blue fish red fish two fish One", SentenceReverser.reverseSentence(inputString));
+		assertEquals("fish blue fish red fish two fish One", reverseSentence(inputString));
 	}
 }

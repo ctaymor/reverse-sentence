@@ -28,11 +28,12 @@ public class SentenceReverser {
 			// TODO: Leave loop if user entered "quit".
 			// TODO: Remove punctuation.
 			// TODO: Print reversed sentence.
+			//System.out.println(mySentence.reverseSentence);//XXX: Check is this correct style for variable name?
 		}
 	}
 	
 	// TODO: Add JavaDoc.
-	public static String reverseSentence(String s) {//XXX: Made this static to make the tests work. Don't know if it should be
+	public String reverseSentence(String s) {
 		// TODO: Write body.
 		return null;
 	}
