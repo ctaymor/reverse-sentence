@@ -32,7 +32,7 @@ public class SentenceReverser {
 	}
 	
 	// TODO: Add JavaDoc.
-	public String reverseSentence(String s) {
+	public static String reverseSentence(String s) {//XXX: Made this static to make the tests work. Don't know if it should be
 		// TODO: Write body.
 		return null;
 	}
