@@ -19,14 +19,15 @@ public class SentenceReverser {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
+		outerloop:
 		while (true) {
 			System.out.println("Enter a sentence to reverse (or 'quit' to quit): ");
 			String input = scanner.nextLine();
 			if (input.equals("quit")) {
-				break;
+				break outerloop;
 			}
 			// TODO: Leave loop if user entered "quit".
+			// TODO: Unsure what ellen wants us to do to leave the loop, does she mean break all loops
 
 			System.out.println(reverseSentence(input));//TODO: Check is this correct style for variable name?
 		}
@@ -34,10 +35,9 @@ public class SentenceReverser {
 	
 	// TODO: Add JavaDoc.
 	public static String reverseSentence(String s) {//TODO having the problem with this being static again
-		if(s!=""){
-			// TODO: Remove punctuation.
-			s = s.replaceAll("[^a-zA-Z ]","");
-			
+		if(s != ""){
+			s = s.replaceAll("[^a-zA-Z ]","").toLowerCase();// TODO: do we want it to lowercase?
+			s = s.replaceAll("  "," ");//ugly fix which only cleans up case of " . " but not " . . "
 			String words[];//TODO check style guidelines on naming variables and ordering them
 			String finalString;
 			finalString="";//TODO check if we can declare and initialize on same line according to style guidelines
@@ -46,7 +46,7 @@ public class SentenceReverser {
 				if(words[i].equals(" ")){
 					words[i]="";
 				};
-				if (i==0 || words[i]==""){// TODO: how to get rid of extra spacing
+				if (i==0){
 					finalString= finalString+ words[i];
 				} else {
 					finalString= finalString+ words[i]+" ";

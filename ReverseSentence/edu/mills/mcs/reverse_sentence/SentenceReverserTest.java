@@ -5,11 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class SentenceReverserTest extends SentenceReverser {
-
-	@Test
-	public void testReverseSentence() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testReverseSentenceWithEmptyString() {
@@ -24,9 +19,9 @@ public class SentenceReverserTest extends SentenceReverser {
 	}
 	
 	@Test
-	public void testReverseSentenceWithNoWordsJustPunctuation() {
+	public void testReverseSentenceWithPunctuationAsItsOwnWord() {
 		String inputString ="The cat is a . fish.";
-		assertEquals("fish a is cat The", reverseSentence(inputString));
+		assertEquals("fish a is cat the", reverseSentence(inputString));
 	}
 	
 	@Test
@@ -38,12 +33,12 @@ public class SentenceReverserTest extends SentenceReverser {
 	@Test
 	public void testReverseSentenceWithMultipleWordsAndNoPunctuation() {
 		String inputString ="One fish two fish";
-		assertEquals("fish two fish One", reverseSentence(inputString));
+		assertEquals("fish two fish one", reverseSentence(inputString));
 	}
 	
 	@Test
 	public void testReverseSentenceWithMultipleWordsAndPunctuation() {
 		String inputString ="One fish, two fish, red fish, blue fish.";
-		assertEquals("fish blue fish red fish two fish One", reverseSentence(inputString));
+		assertEquals("fish blue fish red fish two fish one", reverseSentence(inputString));
 	}
 }
