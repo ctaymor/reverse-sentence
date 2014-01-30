@@ -14,7 +14,7 @@ public class SentenceReverserTest extends SentenceReverser {
 	@Test
 	public void testReverseSentenceWithEmptyString() {
 		String inputString ="";
-		assertEquals("", reverseSentence(inputString));
+		assertEquals("" , reverseSentence(inputString));
 	}
 	
 	@Test

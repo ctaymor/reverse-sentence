@@ -28,17 +28,28 @@ public class SentenceReverser {
 			}
 			// TODO: Leave loop if user entered "quit".
 			// TODO: Remove punctuation.
-			// TODO: Print reversed sentence.
-			//System.out.println(mySentence.reverseSentence);//XXX: Check is this correct style for variable name?
+			String newSentence=reverseSentence(input);
+			System.out.println(newSentence);//TODO: Check is this correct style for variable name?
 		}
 	}
 	
 	// TODO: Add JavaDoc.
-	public String reverseSentence(String s) {
-		// TODO: Write body.
-		// TODO: First, parse words and assign them to a datastructure
-		// TODO: Then reverse the order of the datastructure
-		// TODO: Then form string with words from reordered datastructure
-		return null;
+	public static String reverseSentence(String s) {//TODO having the problem with this being static again
+		if(s!=""){
+			String words[];//TODO check style guidelines on naming variables and ordering them
+			String finalString;
+			finalString="";//TODO check if we can declare and initialize on same line according to style guidelines
+			words = s.split(" ");
+			for (int i = words.length-1; i >=0; i--){ // TODO: check code guidelines for spacing on commas and = signs
+				if (i==0){
+					finalString= finalString+ words[i];
+				} else {
+					finalString= finalString+ words[i]+" ";
+				}
+			}
+			return finalString;
+		} else {
+			return s;
+		}
 	}
 }
