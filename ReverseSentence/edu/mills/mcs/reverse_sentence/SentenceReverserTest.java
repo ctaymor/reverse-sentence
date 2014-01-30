@@ -24,6 +24,12 @@ public class SentenceReverserTest extends SentenceReverser {
 	}
 	
 	@Test
+	public void testReverseSentenceWithNoWordsJustPunctuation() {
+		String inputString ="The cat is a . fish.";
+		assertEquals("fish a is cat The", reverseSentence(inputString));
+	}
+	
+	@Test
 	public void testReverseSentenceWithSingleWordAndNoPunctuation() {
 		String inputString ="fish";
 		assertEquals("fish", reverseSentence(inputString));
