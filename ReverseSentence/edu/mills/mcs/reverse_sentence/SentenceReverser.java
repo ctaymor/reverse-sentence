@@ -19,17 +19,15 @@ public class SentenceReverser {
 	 */
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		outerloop:
+		SentenceReverser reverser = new SentenceReverser();
+		
 		while (true) {
 			System.out.println("Enter a sentence to reverse (or 'quit' to quit): ");
 			String input = scanner.nextLine();
 			if (input.equals("quit")) {
-				break outerloop;
+				break;
 			}
-			// TODO: Leave loop if user entered "quit".
-			// Unsure what ellen wants us to do to leave the loop, does she mean break all loops
-
-			System.out.println(reverseSentence(input));
+			System.out.println(reverser.reverseSentence(input));
 		}
 	}
 	
@@ -40,7 +38,7 @@ public class SentenceReverser {
 	 * @param s the sentence to be reversed
 	 * @return the reversed sentence as a <code>String</code>
 	 */
-    public static String reverseSentence(String s) {//TODO having the problem with this being static again
+    public String reverseSentence(String s) {
 		if(s != ""){
 			String finalString = "";
 
