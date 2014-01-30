@@ -27,32 +27,45 @@ public class SentenceReverser {
 				break outerloop;
 			}
 			// TODO: Leave loop if user entered "quit".
-			// TODO: Unsure what ellen wants us to do to leave the loop, does she mean break all loops
+			// Unsure what ellen wants us to do to leave the loop, does she mean break all loops
 
-			System.out.println(reverseSentence(input));//TODO: Check is this correct style for variable name?
+			System.out.println(reverseSentence(input));
 		}
 	}
 	
-	// TODO: Add JavaDoc.
-	public static String reverseSentence(String s) {//TODO having the problem with this being static again
+	/**
+	 * Returns input <code>String</code> reversed word-wise with punctuation
+	 * removed.
+	 * 
+	 * @param s the sentence to be reversed
+	 * @return the reversed sentence as a <code>String</code>
+	 */
+    public static String reverseSentence(String s) {//TODO having the problem with this being static again
 		if(s != ""){
-			s = s.replaceAll("[^a-zA-Z ]","").toLowerCase();// TODO: do we want it to lowercase?
-			s = s.replaceAll("  "," ");//ugly fix which only cleans up case of " . " but not " . . "
-			String words[];//TODO check style guidelines on naming variables and ordering them
-			String finalString;
-			finalString="";//TODO check if we can declare and initialize on same line according to style guidelines
-			words = s.split(" ");
-			for (int i = words.length-1; i >=0; i--){ // TODO: check code guidelines for spacing on commas and = signs
+			String finalString = "";
+
+			// Remove punctuation
+			s = s.replaceAll("[^a-zA-Z ]", "").toLowerCase();
+			/* When the string contains " . " or any other punctuation for the period,
+			*  it was creating a double space. The following line catches that. It does not,
+			*  however, fix the problem in the unlikely yet possible case of " . . ". In that case,
+			   there would still be two or more spaces.*/
+			s = s.replaceAll("  ", " ");
+			
+			// Reverse the sentence
+			String words[] = s.split(" ");
+			for (int i = words.length-1; i >= 0; i--){
 				if(words[i].equals(" ")){
-					words[i]="";
+					words[i] = "";
 				};
-				if (i==0){
-					finalString= finalString+ words[i];
+				if (i == 0){
+					finalString = finalString + words[i];
 				} else {
-					finalString= finalString+ words[i]+" ";
+					finalString = finalString + words[i] + " ";
 				}
 			}
 			return finalString;
+		// If you get here, then the input string was an empty string
 		} else {
 			return s;
 		}
