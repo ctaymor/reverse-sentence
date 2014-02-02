@@ -32,38 +32,38 @@ public class SentenceReverser {
 	}
 	
 	/**
-	 * Returns input <code>String</code> reversed word-wise with punctuation
-	 * removed.
-	 * 
-	 * @param s the sentence to be reversed
-	 * @return the reversed sentence as a <code>String</code>
-	 */
+	* Returns parameter reversed word-wise with punctuation
+	* removed.
+	* 
+	* @param s the sentence to be reversed
+	* @return the reversed sentence as a <code>String</code>
+	*/
     public String reverseSentence(String s) {
-		if(s != ""){
+		if(!s.equals("")) {
 			String finalString = "";
 
-			// Remove punctuation
+			// Remove punctuation.
 			s = s.replaceAll("[^a-zA-Z ]", "").toLowerCase();
-			/* When the string contains " . " or any other punctuation for the period,
-			*  it was creating a double space. The following line catches that. It does not,
-			*  however, fix the problem in the unlikely yet possible case of " . . ". In that case,
-			   there would still be two or more spaces.*/
-			s = s.replaceAll("  ", " ");
+			// When the string contains " . " or any other punctuation for the period,
+			// it was creating a double space. The following line catches that. It does not,
+			// however, fix the problem in the unlikely yet possible case of " . . ". In that case,
+			// there would still be two or more spaces.
+			s = s.replaceAll(" +", " ");
 			
-			// Reverse the sentence
+			// Reverse the sentence.
 			String words[] = s.split(" ");
-			for (int i = words.length-1; i >= 0; i--){
-				if(words[i].equals(" ")){
+			for (int i = words.length-1; i >= 0; i--) {
+				if(words[i].equals(" ")) {
 					words[i] = "";
 				};
 				if (i == 0){
-					finalString = finalString + words[i];
+					finalString += words[i];
 				} else {
-					finalString = finalString + words[i] + " ";
+					finalString += words[i] + " ";
 				}
 			}
 			return finalString;
-		// If you get here, then the input string was an empty string
+		// If you get here, then the input string was an empty string.
 		} else {
 			return s;
 		}
